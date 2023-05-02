@@ -17,3 +17,8 @@ def profile():
     args = request.args
     name = args.get('name')
     return render_template("index.html", name = name)
+
+#outputs data into json format similar to python dictionary
+@views.route("/json")
+def get_json():
+    return jsonify({'name': 'bob', 'age': 50})
